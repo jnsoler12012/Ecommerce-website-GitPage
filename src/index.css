@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-primary {
+    @apply px-7 py-2 bg-brandPrimary text-white rounded hover:bg-neutralDGrey transition-all duration-300 hover:-translate-y-4;
+}
+
+.MuiMobileStepper-dot {
+    height: 1.3rem !important;
+    width: 1.3rem !important;
+}
+
+.MuiMobileStepper-dotActive {
+    background-color: #4CAF4F !important;
+}
+
+/**
+.prevent-select {
+    -webkit-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
+} */
+
+.filter-black {
+    filter: invert(51%) sepia(100%) saturate(302%) hue-rotate(73deg) brightness(95%) contrast(84%);
+}
+
+.hover-filter:hover,
+.hover-filter:focus,
+.filter-black:hover,
+.filter-black:focus {
+    filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(153deg) brightness(95%) contrast(105%);
+}
