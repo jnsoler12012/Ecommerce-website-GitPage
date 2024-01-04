@@ -1,6 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 module.exports = {
     entry: `${__dirname}/src/index.js`,
@@ -9,7 +12,7 @@ module.exports = {
         clean: true,
         //publicPath: '/dist/',
         publicPath: '/dist/',
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
     },
     devServer: {
         historyApiFallback: {
@@ -62,20 +65,29 @@ module.exports = {
             }
         ],
     },
+    performance: {
+        maxEntrypointSize: 51200000000,
+        maxAssetSize: 51200000000,
+        hints: 'error',
+        assetFilter: function (assetFilename) {
+            return !assetFilename.endsWith('.png');
+        },
+    },
     optimization:
-        process.argv.indexOf('-p') === -1
-            ? {}
-            : {
-                minimize: true,
-                minimizer: [
-                    new TerserPlugin({
-                        terserOptions: {
-                            output: {
-                                comments: false,
-                            },
-                        },
-                        extractComments: false,
-                    }),
-                ],
-            },
+    {
+        splitChunks: {
+            chunks: 'all',
+        },
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    output: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            }),
+        ],
+    }
 }

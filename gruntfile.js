@@ -32,8 +32,7 @@ module.exports = function (grunt) {
         },
         'gh-pages': {
             options: {
-                base: 'dist',
-                add: true
+                base: 'dist'
             },
             src: ['**/*']
         }
