@@ -17,6 +17,7 @@ module.exports = {
         },
     },
     resolve: {
+        modules: ['node_modules'],
         extensions: ['.js', '.jsx', '.json']
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
@@ -27,13 +28,13 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 include: [path.resolve(__dirname, 'src')],
-                use: {
+                use: [{
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     },
 
-                },
+                }],
             },
             {
                 test: /\.html$/,

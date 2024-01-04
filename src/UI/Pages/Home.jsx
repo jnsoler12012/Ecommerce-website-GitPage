@@ -1,11 +1,16 @@
 import React from 'react'
-import { Navbar } from '../Components'
+import { About, Blog, Footer, Hero, Navbar, Newsletter, Services } from '../Components'
 
 export default function () {
     return (
-        <div>
-            Main
+        <div className='flex flex-col justify-center items-center'>
             <Navbar />
+            <Hero />
+            <Services />
+            <About />
+            <Blog />
+            <Newsletter />
+            <Footer />
         </div>
     )
 }
