@@ -4,14 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-
 module.exports = {
     entry: `${__dirname}/src/index.js`,
     output: {
         path: `${__dirname}/dist`,
         clean: true,
         //publicPath: '/dist/',
-        publicPath: '/',
+        publicPath: '/dist/',
         filename: 'bundle.js',
     },
     devServer: {
