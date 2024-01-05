@@ -64,7 +64,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: `[contenthash].[ext]`,
-                            publicPath: 'Ecommerce-website-GitPage/dist',
+                            publicPath: './',
                         },
                     }
                 ]
