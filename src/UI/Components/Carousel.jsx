@@ -64,7 +64,7 @@ export default function () {
                 <div className='pt-[4rem] lg:px-14 max-w-screen-2xl'>
                     <div className='md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12'>
                         <div>
-                            <img src={''} alt="" className='md:w-[38rem] w-[20rem]' />
+                            <img src='' alt="" className='md:w-[38rem] w-[20rem]' />
 
                         </div>
                         <div className='md:w-[42%] w-[100%]'>
