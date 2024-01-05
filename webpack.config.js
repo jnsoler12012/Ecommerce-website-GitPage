@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = {
     entry: `${__dirname}/src/index.js`,
@@ -10,7 +11,7 @@ module.exports = {
         path: `${__dirname}/dist`,
         clean: true,
         //publicPath: '/dist/',
-        publicPath: '/dist/',
+        publicPath: '/',
         filename: 'bundle.js',
     },
     devServer: {
@@ -26,7 +27,12 @@ module.exports = {
         },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
-    plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+    plugins: [
+        new HtmlWebpackPlugin({ template: './index.html' }),
+        new webpack.DefinePlugin({
+            "process.env.PUBLIC_PATH_CUSTOM": JSON.stringify(__dirname)
+        }),
+    ],
     module: {
         rules: [
             {
