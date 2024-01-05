@@ -9,7 +9,7 @@
     "startServer": "serve -s dist",
     "start": "webpack-dev-server --host 0.0.0.0 --allowed-hosts all --devtool eval-source-map --mode development --open ",
     "build": "webpack --mode production",
-    "predeploy": "mkdirp ./dist && echo '' >> ./dist/bundle.js && npm run build",
+    "predeploy": "mkdirp ./dist && echo '' >> ./dist/main.bundle.js && npm run build",
     "deploy": "gh-pages -d .",
     "deploy-grunt": "grunt gh-pages"
   },
