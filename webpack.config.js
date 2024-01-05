@@ -13,7 +13,6 @@ module.exports = {
         //publicPath: '/dist/',
         publicPath: '/dist/',
         filename: '[name].bundle.js',
-        asyncChunks: true,
     },
     devServer: {
         historyApiFallback: {
@@ -74,9 +73,6 @@ module.exports = {
     },
     optimization:
     {
-        splitChunks: {
-            chunks: 'all',
-        },
         minimize: true,
         minimizer: [
             new TerserPlugin({
