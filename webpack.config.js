@@ -10,7 +10,7 @@ module.exports = {
         path: `${__dirname}/dist`,
         clean: true,
         //publicPath: '/dist/',
-        publicPath: '/dist/',
+        publicPath: '/',
         filename: 'bundle.js',
     },
     devServer: {
@@ -61,6 +61,8 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[path][name].[ext]',
+                            publicPath: '/Ecommerce-website-GitPage/',
+                            postTransformPublicPath: (p) => `__webpack_public_path__ + ${p}`,
                         },
                     }
                 ]
