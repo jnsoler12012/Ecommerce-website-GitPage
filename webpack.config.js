@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = {
     entry: `${__dirname}/src/index.js`,
@@ -11,7 +12,8 @@ module.exports = {
         clean: true,
         //publicPath: '/dist/',
         publicPath: '/dist/',
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
+        asyncChunks: true,
     },
     devServer: {
         historyApiFallback: {
@@ -21,12 +23,14 @@ module.exports = {
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx', '.json'],
-        alias: {
-            Assets: path.resolve(__dirname, 'src/UI/assets/img/')
-        },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
-    plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+    plugins: [
+        new HtmlWebpackPlugin({ template: './index.html' }),
+        new webpack.DefinePlugin({
+            "process.env.PUBLIC_PATH_CUSTOM": JSON.stringify(__dirname)
+        }),
+    ],
     module: {
         rules: [
             {
@@ -60,7 +64,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[path][name].[ext]',
+                            name: `[contenthash].[ext]`,
+                            publicPath: 'Ecommerce-website-GitPage/dist',
                         },
                     }
                 ]
@@ -69,6 +74,9 @@ module.exports = {
     },
     optimization:
     {
+        splitChunks: {
+            chunks: 'all',
+        },
         minimize: true,
         minimizer: [
             new TerserPlugin({
