@@ -12,7 +12,8 @@ module.exports = {
         clean: true,
         //publicPath: '/dist/',
         publicPath: '/dist/',
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
+        asyncChunks: true,
     },
     devServer: {
         historyApiFallback: {
@@ -22,9 +23,6 @@ module.exports = {
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx', '.json'],
-        alias: {
-            Assets: path.resolve(__dirname, 'src/UI/assets/img/')
-        },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
     plugins: [
@@ -75,6 +73,9 @@ module.exports = {
     },
     optimization:
     {
+        splitChunks: {
+            chunks: 'all',
+        },
         minimize: true,
         minimizer: [
             new TerserPlugin({
