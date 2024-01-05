@@ -22,8 +22,7 @@ module.exports = {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx', '.json'],
         alias: {
-            Assets: path.resolve(__dirname, 'src/UI/assets/img/'),
-            aliasFields: ['browser'],
+            Assets: path.resolve(__dirname, 'src/UI/assets/img/')
         },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
@@ -61,7 +60,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'Ecommerce-website-GitPage/[path][name].[ext]',
+                            name: '[path][name].[ext]',
                         },
                     }
                 ]

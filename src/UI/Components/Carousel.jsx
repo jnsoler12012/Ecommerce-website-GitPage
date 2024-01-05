@@ -4,7 +4,8 @@ import { Box } from '@mui/material/';
 import { MobileStepper } from '@mui/material/';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import Hero11 from "Assets/Hero1.svg"
+import Hero1 from '../assets/img/Hero1.svg'
+import Hero2 from '../assets/img/Hero2.svg'
 import Hero3 from '../assets/img/Hero3.svg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -36,18 +37,6 @@ export default function () {
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
             >
-                <div className=" pt-[4rem] flex flex-col md:flex-row-reverse items-center justify-between gap-12">
-                    <div>
-                        <img src={Hero11} alt="" className='md:w-[28rem] w-[12rem]' />
-                    </div>
-                    {/* hero text */}
-                    <div className="md:w-1/2">
-                        <h1 className="sm:text-6xl text-4xl font-semibold mb-4 text-neutralDGrey md:w-[38rem] w-[27rem] leading-snug">Lessons and insights <span className="text-brandPrimary leading-snug">from 8 years</span></h1>
-                        <p className="text-neutralGrey text-base mb-8">Where to grow your business as a photographer: site or social media?</p>
-                        <button className="btn-primary">Register</button>
-                    </div>
-                </div>
-
                 <div className='pt-[4rem] px-4 lg:px-14 max-w-screen-2xl mx-auto my-8'>
                     <div className='md:w-11/12 mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-12'>
                         <div>
@@ -60,11 +49,21 @@ export default function () {
                     </div>
                 </div>
 
-
+                <div className=" pt-[4rem] flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+                    <div>
+                        <img src={Hero1} alt="" className='md:w-[28rem] w-[12rem]' />
+                    </div>
+                    {/* hero text */}
+                    <div className="md:w-1/2">
+                        <h1 className="sm:text-6xl text-4xl font-semibold mb-4 text-neutralDGrey md:w-[38rem] w-[27rem] leading-snug">Lessons and insights <span className="text-brandPrimary leading-snug">from 8 years</span></h1>
+                        <p className="text-neutralGrey text-base mb-8">Where to grow your business as a photographer: site or social media?</p>
+                        <button className="btn-primary">Register</button>
+                    </div>
+                </div>
                 <div className='pt-[4rem] lg:px-14 max-w-screen-2xl'>
                     <div className='md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12'>
                         <div>
-                            <img src='' alt="" className='md:w-[38rem] w-[20rem]' />
+                            <img src={Hero2} alt="" className='md:w-[38rem] w-[20rem]' />
 
                         </div>
                         <div className='md:w-[42%] w-[100%]'>
