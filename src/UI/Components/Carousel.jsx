@@ -37,38 +37,39 @@ export default function () {
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
             >
-                <div className='pt-[4rem] px-4 lg:px-14 max-w-screen-2xl mx-auto my-8'>
-                    <div className='md:w-11/12 mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-12'>
-                        <div>
-                            <img src={Hero3} alt="" className='md:w-[31rem] w-[22rem]' />
-                        </div>
-                        <div className='md:w-[42%] w-[100%]'>
-                            <h2 className='md:text-4xl text-3xl text-neutralDGrey font-semibold mb-4 md:w-[19rem] w-[29rem]'>The unseen of spending three years at Pixelgrade</h2>
-                            <p className='md:w-[19rem] w-[26rem] text-md text-neutralGrey mb-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. </p> <button className='btn-primary' >Learn More</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className=" pt-[4rem] flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+                <div className=" pt-[4rem] flex flex-col md:flex-row-reverse items-center justify-between gap-12" id='tester'>
                     <div>
                         <img src={Hero1} alt="" className='md:w-[28rem] w-[12rem]' />
                     </div>
                     {/* hero text */}
                     <div className="md:w-1/2">
-                        <h1 className="sm:text-6xl text-4xl font-semibold mb-4 text-neutralDGrey md:w-[38rem] w-[27rem] leading-snug">Lessons and insights <span className="text-brandPrimary leading-snug">from 8 years</span></h1>
-                        <p className="text-neutralGrey text-base mb-8">Where to grow your business as a photographer: site or social media?</p>
+                        <h1 className="sm:text-6xl text-4xl font-semibold mb-4 text-neutralDGrey md:w-[38rem] w-[100%] leading-snug">Lessons and insights <span className="text-brandPrimary leading-snug">from 8 years</span></h1>
+                        <p className="text-neutralGrey text-base mb-8 w-[100%]">Where to grow your business as a photographer: site or social media?</p>
                         <button className="btn-primary">Register</button>
                     </div>
                 </div>
-                <div className='pt-[4rem] lg:px-14 max-w-screen-2xl'>
-                    <div className='md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12'>
+                <div className='pt-[4rem] px-4 lg:px-14 max-w-screen-2xl mx-auto my-8'>
+                    <div className='md:w-11/12 mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-1'>
                         <div>
-                            <img src={Hero2} alt="" className='md:w-[38rem] w-[20rem]' />
+                            <img src={Hero3} alt="" className='md:w-[31rem] w-[15rem]' />
+                        </div>
+                        <div className='md:w-[42%] w-[100%]'>
+                            <h2 className='md:text-4xl text-3xl text-neutralDGrey font-semibold mb-4 md:w-[19rem] w-[100%]'>The unseen of spending three years at Pixelgrade</h2>
+                            <p className='md:w-[19rem] w-[100%] text-md text-neutralGrey mb-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. </p> <button className='btn-primary' >Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className='pt-[4rem] lg:px-14 max-w-screen-2xl'>
+                    <div className='md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-1'>
+                        <div>
+                            <img src={Hero2} alt="" className='md:w-[38rem] w-[15.5rem]' />
 
                         </div>
                         <div className='md:w-[42%] w-[100%]'>
-                            <h2 className='md:text-4xl text-3xl text-neutralDGrey font-semibold mb-4 md:w-[19rem] w-[29rem]'>The unseen of spending three years at Pixelgrade</h2>
-                            <p className='md:w-[19rem] w-[26rem] text-md text-neutralGrey mb-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta.</p> <button className='btn-primary' >Learn More</button>
+                            <h2 className='md:text-4xl text-3xl text-neutralDGrey font-semibold mb-4 md:w-[19rem] w-[100%]'>The unseen of spending three years at Pixelgrade</h2>
+                            <p className='md:w-[19rem] w-[100%] text-md text-neutralGrey mb-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum.</p> <button className='btn-primary' >Learn More</button>
                         </div>
                     </div>
                 </div>

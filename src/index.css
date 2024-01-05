@@ -25,7 +25,7 @@ body {
     background-color: #4CAF4F !important;
 }
 
-/**
+
 .prevent-select {
     -webkit-user-select: none;
 
@@ -37,7 +37,12 @@ body {
     -webkit-overflow-scrolling: none;
     overflow: hidden;
     overscroll-behavior: none;
-} */
+}
+
+
+.react-swipeable-view-container{
+    height: 100% !important;
+}
 
 .filter-black {
     filter: invert(51%) sepia(100%) saturate(302%) hue-rotate(73deg) brightness(95%) contrast(84%);
