@@ -23,6 +23,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
             Assets: path.resolve(__dirname, 'src/UI/assets/img/'),
+            aliasFields: ['browser'],
         },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
@@ -58,10 +59,10 @@ module.exports = {
                 test: /\.(jpe?g|gif|png|svg)$/i,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 10000
-                        }
+                            name: 'Ecommerce-website-GitPage/[path][name].[ext]',
+                        },
                     }
                 ]
             }
