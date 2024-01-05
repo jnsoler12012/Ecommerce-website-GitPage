@@ -4,6 +4,7 @@
   "private": false,
   "description": "Eccomerce website page",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "startServer": "serve -s dist",
     "start": "webpack-dev-server --host 0.0.0.0 --allowed-hosts all --devtool eval-source-map --mode development --open ",
