@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-
 module.exports = {
     entry: `${__dirname}/src/index.js`,
     output: {
@@ -21,10 +20,13 @@ module.exports = {
     },
     resolve: {
         modules: ['node_modules'],
-        extensions: ['.js', '.jsx', '.json']
+        extensions: ['.js', '.jsx', '.json'],
+        alias: {
+            Assets: path.resolve(__dirname, 'src/UI/assets/img/'),
+        },
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
-    //plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+    plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
     module: {
         rules: [
             {
