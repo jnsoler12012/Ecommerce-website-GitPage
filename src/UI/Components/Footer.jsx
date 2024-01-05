@@ -55,7 +55,7 @@ export default function () {
                 </div>
             </div>
             <hr className='w-full mt-[2rem] mb-[1rem] border-gray-200 sm:mx-auto dark:border-gray-700' />
-            <div className="w-full mb-[5px] sm:flex sm:items-center sm:justify-between h-[3rem]">
+            <div className="w-full mb-[1rem] sm:flex sm:items-center sm:justify-between h-[auto]">
                 <div className="text-[1rem] text-white sm:text-center">
                     © 2022<a href="#" className="ml-1 hover:underline">Nicolas Soler</a>
                 </div>
