@@ -12,7 +12,7 @@ module.exports = {
         clean: true,
         //publicPath: '/dist/',
         publicPath: '/dist/',
-        filename: '[name].bundle.js',
+        filename: 'bundle.js',
     },
     devServer: {
         historyApiFallback: {
@@ -24,7 +24,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json']
     },
     devtool: process.argv.indexOf('-p') === -1 ? 'eval-source-map' : 'source-map',
-    plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+    //plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
     module: {
         rules: [
             {
@@ -65,19 +65,8 @@ module.exports = {
             }
         ],
     },
-    performance: {
-        maxEntrypointSize: 51200000000,
-        maxAssetSize: 51200000000,
-        hints: 'error',
-        assetFilter: function (assetFilename) {
-            return !assetFilename.endsWith('.png');
-        },
-    },
     optimization:
     {
-        splitChunks: {
-            chunks: 'all',
-        },
         minimize: true,
         minimizer: [
             new TerserPlugin({
